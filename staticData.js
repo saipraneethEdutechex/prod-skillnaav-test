@@ -33,6 +33,7 @@ const features = [
     point1: "Options to explore various career paths",
     point2: "Mapping of internships based on students' personality",
     point3: "xyz",
+    point4: "dfgdfg",
   },
   {
     feature: "Early Opportunities",
@@ -45,6 +46,7 @@ const features = [
       "Builds a database of students with relevant skills and passion within the country to assist career navigation",
     point3:
       "Curates relevant academic and industry-oriented internships based on forecast",
+    point4: "",
   },
   {
     feature: "Early Scientific Opportunities",
@@ -55,6 +57,7 @@ const features = [
     point2:
       "Opportunities to experience diverse cultures and work environments",
     point3: "Networking with professionals on a global scale",
+    point4: "",
   },
   {
     feature: "Early Scfic Opportunities",
@@ -65,6 +68,7 @@ const features = [
     point2:
       "Opportunities to experience diverse cultures and work environments",
     point3: "Networking with professionals on a global scale",
+    point4: "",
   },
 ];
 
@@ -79,28 +83,50 @@ const team = [
           "https://www.skillnaav.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FramK_img.b6f3564a.png&w=1920&q=75",
         teammemberName: "Dr. Ram K Aluru",
         teammemberDesgn: "C.E.O / C.T.O",
-        teammemberDesc: "PhD",
+        teammemberDesc:
+          "Expert in Quantum Physics with a PhD from St Andrews, Scotland, UK. Over 10 years of experience in R&D and Quantum Technologies.",
+        teammemberLinkedin:
+          "https://www.linkedin.com/in/dr-ram-k-aluru-77608a3b/",
       },
       {
         image:
           "https://www.skillnaav.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FshwetaKinra.3b1ffee1.png&w=1920&q=75",
-        teammemberName: "Shweta",
-        teammemberDesgn: "Head",
-        teammemberDesc: "Phd in Texts",
+        teammemberName: "Ms. Shweta Kinra",
+        teammemberDesgn: "Head, University Outreach",
+        teammemberDesc:
+          "PhD in Textiles and Clothing, Delhi University, India. 10+ years in university research and teaching.",
+        teammemberLinkedin:
+          "https://www.linkedin.com/in/shweta-kinra-17b88916/",
       },
       {
         image:
           "https://www.skillnaav.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FHemaRanjini.4f051e04.jpeg&w=1920&q=75",
-        teammemberName: "Hem",
-        teammemberDesgn: "Head",
-        teammemberDesc: "M Sc",
+        teammemberName: "Ms. Hem Ranjani",
+        teammemberDesgn: "Head, HR & Schools BD",
+        teammemberDesc:
+          "M.Sc. in Agrochemicals & PG Diploma in HR Management. 10+ years teaching at IGCSE and IB Schools in Dubai & UAE.",
+        teammemberLinkedin:
+          "https://www.linkedin.com/in/hem-ranjani-826b021bb/",
       },
       {
         image:
           "https://www.skillnaav.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FHemaRanjini.4f051e04.jpeg&w=1920&q=75",
-        teammemberName: "Krishna",
-        teammemberDesgn: "Head",
-        teammemberDesc: "MBA",
+        teammemberName: "Mr. Krishna Pillai",
+        teammemberDesgn: "Head, Market Research",
+        teammemberDesc:
+          "MA & MBA Madurai Kamraj University, India. 15+ years in Industrial Supply chain production and planning.",
+        teammemberLinkedin:
+          "https://www.linkedin.com/in/krishna-pillai-padmanabhan/",
+      },
+      {
+        image:
+          "https://www.skillnaav.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FHemaRanjini.4f051e04.jpeg&w=1920&q=75",
+        teammemberName: "Ms. Akankasha Chugh",
+        teammemberDesgn: "Head, Operations Coordination",
+        teammemberDesc:
+          "M.Sc. in Food Science & Nutrition Allahabad University. 5+ years in global events management across countries.",
+        teammemberLinkedin:
+          "https://www.linkedin.com/in/akanksha-chugh-974813284/",
       },
     ],
   },
