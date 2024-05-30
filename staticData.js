@@ -48,6 +48,16 @@ export const features = [
       "Curates relevant academic and industry-oriented internships based on forecast",
     point4: "",
   },
+  {
+    feature: "Early Scientific Opportunities",
+    featuredesc: "Provides Early Exposure to Science",
+    subfeature:
+      "Provides an early scientific opportunity for students to experience and acquire skill sets required for building careers.",
+    point1: "Options to explore various career paths",
+    point2: "Mapping of internships based on students' personality",
+    point3: "xyz",
+    point4: "dfgdfg",
+  },
 ];
 
 export const team = [
