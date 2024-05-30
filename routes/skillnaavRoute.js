@@ -10,6 +10,7 @@ const {
   Footer,
 } = require("../models/skillnaavModel");
 
+// get all SkillNaav data
 router.get("/get-skillnaav-data", async (req, res) => {
   try {
     const discovers = await Discover.find();
@@ -30,6 +31,78 @@ router.get("/get-skillnaav-data", async (req, res) => {
       faq: faqs,
       contact: contact,
       footer: footer,
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// Update discover
+router.post("/update-discover", async (req, res) => {
+  try {
+    const discover = await Discover.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: discover,
+      success: true,
+      message: "Discover updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+//Update Vision
+router.post("/update-vision", async (req, res) => {
+  try {
+    const vision = await Vision.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: vision,
+      success: true,
+      message: "Vision updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+//Update Features
+router.post("/update-features", async (req, res) => {
+  try {
+    const feature = await Feature.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: feature,
+      success: true,
+      message: "Vision updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+//Update Team
+router.post("/update-team", async (req, res) => {
+  try {
+    const team = await Team.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: team,
+      success: true,
+      message: "Team updated successfully",
     });
   } catch (error) {
     res.status(500).send(error);
