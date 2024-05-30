@@ -24,6 +24,10 @@ const visionSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  visionsubheading: {
+    type: String,
+    required: true,
+  },
   visionpoints: {
     type: Array,
     required: true,

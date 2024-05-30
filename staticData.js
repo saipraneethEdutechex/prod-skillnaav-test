@@ -1,4 +1,4 @@
-const discovers = [
+export const discovers = [
   {
     discoverheading: "Discover tailored Internships worldwide with us.",
     discoversubheading:
@@ -8,7 +8,7 @@ const discovers = [
   },
 ];
 
-const vision = [
+export const vision = [
   {
     visionheading: "Our Vision",
     visionsubheading:
@@ -24,7 +24,7 @@ const vision = [
   },
 ];
 
-const features = [
+export const features = [
   {
     feature: "Early Scientific Opportunities",
     featuredesc: "Provides Early Exposure to Science",
@@ -48,31 +48,9 @@ const features = [
       "Curates relevant academic and industry-oriented internships based on forecast",
     point4: "",
   },
-  {
-    feature: "Early Scientific Opportunities",
-    featuredesc: "Provides Early Exposure to Science",
-    subfeature:
-      "Provides an early scientific opportunity for students to experience and acquire skill sets required for building careers.",
-    point1: "Access to internships worldwide",
-    point2:
-      "Opportunities to experience diverse cultures and work environments",
-    point3: "Networking with professionals on a global scale",
-    point4: "",
-  },
-  {
-    feature: "Early Scfic Opportunities",
-    featuredesc: "Provides Early Exposure to Science",
-    subfeature:
-      "Provides an early scientific opportunity for students to experience and acquire skill sets required for building careers.",
-    point1: "Access to internships worldwide",
-    point2:
-      "Opportunities to experience diverse cultures and work environments",
-    point3: "Networking with professionals on a global scale",
-    point4: "",
-  },
 ];
 
-const team = [
+export const team = [
   {
     teamheading: "Meet Our Team",
     teamsubheading:
@@ -132,7 +110,7 @@ const team = [
   },
 ];
 
-const pricing = [
+export const pricing = [
   {
     priceheading: "Choose the Perfect Plan for You",
     priceCards: [
@@ -155,7 +133,7 @@ const pricing = [
   },
 ];
 
-const faqs = [
+export const faqs = [
   {
     faqheading: "Frequently Asked Questions",
     faqsubheading: "Let’s clarify some of your questions",
@@ -176,7 +154,7 @@ const faqs = [
   },
 ];
 
-const contact = [
+export const contact = [
   {
     havequestions: "Have Questions? Get in Touch",
     email: "info@navigatebi.com",

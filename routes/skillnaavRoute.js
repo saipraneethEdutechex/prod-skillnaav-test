@@ -25,7 +25,7 @@ router.get("/get-skillnaav-data", async (req, res) => {
     res.status(200).send({
       discover: discovers,
       vision: vision,
-      feature: features,
+      features: features,
       team: team,
       pricing: pricing,
       faq: faqs,
@@ -76,13 +76,13 @@ router.post("/update-vision", async (req, res) => {
 //Update Features
 router.post("/update-features", async (req, res) => {
   try {
-    const feature = await Feature.findOneAndUpdate(
+    const features = await Feature.findOneAndUpdate(
       { _id: req.body._id },
       req.body,
       { new: true }
     );
     res.status(200).send({
-      data: feature,
+      data: features,
       success: true,
       message: "Vision updated successfully",
     });
