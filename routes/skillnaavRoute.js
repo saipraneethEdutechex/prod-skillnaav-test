@@ -88,18 +88,48 @@ router.post("/add-vision", async (req, res) => {
   }
 });
 
-//Update Features
-router.post("/update-features", async (req, res) => {
+// Update Feature
+router.post("/update-feature", async (req, res) => {
   try {
-    const features = await Feature.findOneAndUpdate(
+    const feature = await Feature.findOneAndUpdate(
       { _id: req.body._id },
       req.body,
       { new: true }
     );
     res.status(200).send({
-      data: features,
+      data: feature,
       success: true,
-      message: "Vision updated successfully",
+      message: "Feature updated successfully",
+    });
+  } catch (error) {
+    console.error("Error updating feature:", error);
+    res.status(500).send(error);
+  }
+});
+
+// Add Feature
+router.post("/add-feature", async (req, res) => {
+  try {
+    const feature = new Feature(req.body);
+    await feature.save();
+    res.status(200).send({
+      data: feature,
+      success: true,
+      message: "Feature added successfully",
+    });
+  } catch (error) {
+    console.error("Error adding feature:", error);
+    res.status(500).send(error);
+  }
+});
+
+// Delete Feature
+router.delete("/delete-feature/:id", async (req, res) => {
+  try {
+    await Feature.findByIdAndDelete(req.params.id);
+    res.status(200).send({
+      success: true,
+      message: "Feature deleted successfully",
     });
   } catch (error) {
     res.status(500).send(error);

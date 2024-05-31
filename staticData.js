@@ -10,17 +10,14 @@ export const discovers = [
 
 export const vision = [
   {
-    visionheading: "Our Vision",
-    visionsubheading:
-      "Empowering students with early opportunities to acquire essential skills for their careers. We offer diverse career paths supported by AI technologies, ensuring access to quality internships, and building a robust database of skilled students for effective career navigation.",
-    visionpoints: [
+    visionheading: "Vision",
+    visiondesc: "Vision Subheading",
+    subvision:
       "Provides an early scientific opportunity for students to experience and acquire skill sets required for building careers.",
-      "Options to explore various career paths before zeroing down to the passionate one blended with the right skill set with the help of AI-based technologies.",
-      "Mapping of internships based on students' personality through psychometrics.",
-      "Democratizing the accessibility of practical and quality internships within a country and abroad irrespective of the financial condition of the student.",
-      "Builds a database of students with relevant skills and passion within the country to assist career navigation.",
-      "Curates relevant academic and industry-oriented internships based on forecasts.",
-    ],
+    point1: "Options to explore various career paths",
+    point2: "Mapping of internships based on students' personality",
+    point3: "xyz",
+    point4: "dfgdfg",
   },
 ];
 
@@ -46,7 +43,7 @@ export const features = [
       "Builds a database of students with relevant skills and passion within the country to assist career navigation",
     point3:
       "Curates relevant academic and industry-oriented internships based on forecast",
-    point4: "",
+    point4: "fhsdfg",
   },
   {
     feature: "Early Scientific Opportunities",
