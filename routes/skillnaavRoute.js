@@ -73,6 +73,21 @@ router.post("/update-vision", async (req, res) => {
   }
 });
 
+//Add Vision
+router.post("/add-vision", async (req, res) => {
+  try {
+    const vision = new Vision(req.body);
+    await vision.save();
+    res.status(200).send({
+      data: vision,
+      success: true,
+      message: "Vision added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 //Update Features
 router.post("/update-features", async (req, res) => {
   try {
@@ -94,11 +109,9 @@ router.post("/update-features", async (req, res) => {
 //Update Team
 router.post("/update-team", async (req, res) => {
   try {
-    const team = await Team.findOneAndUpdate(
-      { _id: req.body._id },
-      req.body,
-      { new: true }
-    );
+    const team = await Team.findOneAndUpdate({ _id: req.body._id }, req.body, {
+      new: true,
+    });
     res.status(200).send({
       data: team,
       success: true,
