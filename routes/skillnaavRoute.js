@@ -167,4 +167,34 @@ router.post("/update-team", async (req, res) => {
   }
 });
 
+// Add Team
+router.post("/add-team", async (req, res) => {
+  try {
+    const team = new Team(req.body);
+    await team.save();
+    res.status(200).send({
+      data: team,
+      success: true,
+      message: "Team added successfully",
+    });
+  } catch (error) {
+    console.error("Error adding team:", error);
+    res.status(500).send(error);
+  }
+});
+
+// Delete Team
+router.delete("/delete-team/:id", async (req, res) => {
+  try {
+    await Team.findByIdAndDelete(req.params.id);
+    res.status(200).send({
+      success: true,
+      message: "Feature deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+
 module.exports = router;

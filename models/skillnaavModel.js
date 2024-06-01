@@ -90,8 +90,24 @@ const teamSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  teamMembers: {
-    type: Array,
+  image: {
+    type: String,
+    required: true,
+  },
+  teammemberName: {
+    type: String,
+    required: true,
+  },
+  teammemberDesgn: {
+    type: String,
+    required: true,
+  },
+  teammemberDesc: {
+    type: String,
+    required: true,
+  },
+  teammemberLinkedin: {
+    type: String,
     required: true,
   },
 });
