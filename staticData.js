@@ -57,69 +57,41 @@ export const features = [
   },
 ];
 
-export const team = [
-  {
+export const team = {
+  team: {
     teamheading: "Meet Our Team",
-    teamsubheading:
-      "Discover the brilliant minds behind our innovative solutions. Our team is composed of experienced professionals dedicated to pushing the boundaries of technology and research.",
-    image:
-      "https://www.skillnaav.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FramK_img.b6f3564a.png&w=1920&q=75",
-    teammemberName: "Dr. Ram K Aluru",
-    teammemberDesgn: "C.E.O / C.T.O",
-    teammemberDesc:
-      "Expert in Quantum Physics with a PhD from St Andrews, Scotland, UK. Over 10 years of experience in R&D and Quantum Technologies.",
-    teammemberLinkedin: "https://www.linkedin.com/in/dr-ram-k-aluru-77608a3b/",
+    teamsubheading: "A group of dedicated professionals",
+    teamMembers: [
+      {
+        image:
+          "https://www.skillnaav.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FramK_img.b6f3564a.png&w=1920&q=75",
+        teammemberName: "John Doe",
+        teammemberDesgn: "Software Engineer",
+        teammemberDesc:
+          "John is a seasoned software engineer with over 10 years of experience.",
+        teammemberLinkedin: "https://www.linkedin.com/in/johndoe/",
+      },
+      {
+        image:
+          "https://www.skillnaav.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FramK_img.b6f3564a.png&w=1920&q=75",
+        teammemberName: "Jane Smith",
+        teammemberDesgn: "Product Manager",
+        teammemberDesc:
+          "Jane is a skilled product manager who excels at team collaboration and product development.",
+        teammemberLinkedin: "https://www.linkedin.com/in/janesmith/",
+      },
+      {
+        image:
+          "https://www.skillnaav.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FramK_img.b6f3564a.png&w=1920&q=75",
+        teammemberName: "Alice Johnson",
+        teammemberDesgn: "UX Designer",
+        teammemberDesc:
+          "Alice is a creative UX designer with a passion for user-centered design.",
+        teammemberLinkedin: "https://www.linkedin.com/in/alicejohnson/",
+      },
+    ],
   },
-  {
-    teamheading: "Meet Our Team",
-    teamsubheading:
-      "Discover the brilliant minds behind our innovative solutions. Our team is composed of experienced professionals dedicated to pushing the boundaries of technology and research.",
-    image:
-      "https://www.skillnaav.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FshwetaKinra.3b1ffee1.png&w=1920&q=75",
-    teammemberName: "Ms. Shweta Kinra",
-    teammemberDesgn: "Head, University Outreach",
-    teammemberDesc:
-      "PhD in Textiles and Clothing, Delhi University, India. 10+ years in university research and teaching.",
-    teammemberLinkedin: "https://www.linkedin.com/in/shweta-kinra-17b88916/",
-  },
-  {
-    teamheading: "Meet Our Team",
-    teamsubheading:
-      "Discover the brilliant minds behind our innovative solutions. Our team is composed of experienced professionals dedicated to pushing the boundaries of technology and research.",
-    image:
-      "https://www.skillnaav.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FHemaRanjini.4f051e04.jpeg&w=1920&q=75",
-    teammemberName: "Ms. Hem Ranjani",
-    teammemberDesgn: "Head, HR & Schools BD",
-    teammemberDesc:
-      "M.Sc. in Agrochemicals & PG Diploma in HR Management. 10+ years teaching at IGCSE and IB Schools in Dubai & UAE.",
-    teammemberLinkedin: "https://www.linkedin.com/in/hem-ranjani-826b021bb/",
-  },
-  {
-    teamheading: "Meet Our Team",
-    teamsubheading:
-      "Discover the brilliant minds behind our innovative solutions. Our team is composed of experienced professionals dedicated to pushing the boundaries of technology and research.",
-    image:
-      "https://www.skillnaav.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FHemaRanjini.4f051e04.jpeg&w=1920&q=75",
-    teammemberName: "Mr. Krishna Pillai",
-    teammemberDesgn: "Head, Market Research",
-    teammemberDesc:
-      "MA & MBA Madurai Kamraj University, India. 15+ years in Industrial Supply chain production and planning.",
-    teammemberLinkedin:
-      "https://www.linkedin.com/in/krishna-pillai-padmanabhan/",
-  },
-  {
-    teamheading: "Meet Our Team",
-    teamsubheading:
-      "Discover the brilliant minds behind our innovative solutions. Our team is composed of experienced professionals dedicated to pushing the boundaries of technology and research.",
-    image:
-      "https://www.skillnaav.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FHemaRanjini.4f051e04.jpeg&w=1920&q=75",
-    teammemberName: "Ms. Akankasha Chugh",
-    teammemberDesgn: "Head, Operations Coordination",
-    teammemberDesc:
-      "M.Sc. in Food Science & Nutrition Allahabad University. 5+ years in global events management across countries.",
-    teammemberLinkedin: "https://www.linkedin.com/in/akanksha-chugh-974813284/",
-  },
-];
+};
 
 export const pricing = [
   {

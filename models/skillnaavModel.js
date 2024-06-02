@@ -81,15 +81,11 @@ const featureSchema = new mongoose.Schema({
   },
 });
 
-const teamSchema = new mongoose.Schema({
-  teamheading: {
-    type: String,
-    required: true,
-  },
-  teamsubheading: {
-    type: String,
-    required: true,
-  },
+const teamMemberSchema = new mongoose.Schema({
+  // _id: {
+  //   type: Number,
+  //   required: true,
+  // },
   image: {
     type: String,
     required: true,
@@ -110,6 +106,18 @@ const teamSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+});
+
+const teamSchema = new mongoose.Schema({
+  teamheading: {
+    type: String,
+    required: true,
+  },
+  teamsubheading: {
+    type: String,
+    required: true,
+  },
+  teamMembers: [teamMemberSchema],
 });
 
 const pricingSchema = new mongoose.Schema({

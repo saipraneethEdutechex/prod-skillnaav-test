@@ -56,7 +56,7 @@ router.post("/update-discover", async (req, res) => {
 });
 
 // Update Vision
-router.post('/update-vision', async (req, res) => {
+router.post("/update-vision", async (req, res) => {
   try {
     const vision = await Vision.findOneAndUpdate(
       { _id: req.body._id },
@@ -66,37 +66,37 @@ router.post('/update-vision', async (req, res) => {
     res.status(200).send({
       data: vision,
       success: true,
-      message: 'Vision updated successfully',
+      message: "Vision updated successfully",
     });
   } catch (error) {
-    console.error('Error updating vision:', error);
+    console.error("Error updating vision:", error);
     res.status(500).send(error);
   }
 });
 
 // Add Vision
-router.post('/add-vision', async (req, res) => {
+router.post("/add-vision", async (req, res) => {
   try {
     const vision = new Vision(req.body);
     await vision.save();
     res.status(200).send({
       data: vision,
       success: true,
-      message: 'Vision added successfully',
+      message: "Vision added successfully",
     });
   } catch (error) {
-    console.error('Error adding vision:', error);
+    console.error("Error adding vision:", error);
     res.status(500).send(error);
   }
 });
 
 // Delete Vision
-router.delete('/delete-vision/:id', async (req, res) => {
+router.delete("/delete-vision/:id", async (req, res) => {
   try {
     await Vision.findByIdAndDelete(req.params.id);
     res.status(200).send({
       success: true,
-      message: 'Vision deleted successfully',
+      message: "Vision deleted successfully",
     });
   } catch (error) {
     res.status(500).send(error);
@@ -151,7 +151,7 @@ router.delete("/delete-feature/:id", async (req, res) => {
   }
 });
 
-//Update Team
+// Update Team
 router.post("/update-team", async (req, res) => {
   try {
     const team = await Team.findOneAndUpdate({ _id: req.body._id }, req.body, {
@@ -195,6 +195,5 @@ router.delete("/delete-team/:id", async (req, res) => {
     res.status(500).send(error);
   }
 });
-
 
 module.exports = router;
