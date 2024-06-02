@@ -184,16 +184,20 @@ router.post("/add-team", async (req, res) => {
 });
 
 // Delete Team
-router.delete("/delete-team/:id", async (req, res) => {
+const onDelete = async (teamId) => {
   try {
-    await Team.findByIdAndDelete(req.params.id);
-    res.status(200).send({
-      success: true,
-      message: "Feature deleted successfully",
-    });
+    console.log("Deleting team with ID:", teamId); 
+    const response = await axios.delete(`/api/skillnaav/delete-team/${teamId}`);
+    if (response.data.success) {
+      message.success(response.data.message);
+      fetchSkillnaavData();
+    } else {
+      message.error(response.data.message);
+    }
   } catch (error) {
-    res.status(500).send(error);
+    message.error("Error deleting team:", error.message);
+    console.error("Error deleting team:", error);
   }
-});
+};
 
 module.exports = router;

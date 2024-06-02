@@ -63,6 +63,7 @@ export const team = {
     teamsubheading: "A group of dedicated professionals",
     teamMembers: [
       {
+        _id: 1,
         image:
           "https://www.skillnaav.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FramK_img.b6f3564a.png&w=1920&q=75",
         teammemberName: "John Doe",
@@ -72,6 +73,7 @@ export const team = {
         teammemberLinkedin: "https://www.linkedin.com/in/johndoe/",
       },
       {
+        _id: 2,
         image:
           "https://www.skillnaav.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FramK_img.b6f3564a.png&w=1920&q=75",
         teammemberName: "Jane Smith",
@@ -81,6 +83,7 @@ export const team = {
         teammemberLinkedin: "https://www.linkedin.com/in/janesmith/",
       },
       {
+        _id: 3,
         image:
           "https://www.skillnaav.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FramK_img.b6f3564a.png&w=1920&q=75",
         teammemberName: "Alice Johnson",

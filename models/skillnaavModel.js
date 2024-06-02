@@ -82,10 +82,10 @@ const featureSchema = new mongoose.Schema({
 });
 
 const teamMemberSchema = new mongoose.Schema({
-  // _id: {
-  //   type: Number,
-  //   required: true,
-  // },
+  _id: {
+    type: Number,
+    required: true,
+  },
   image: {
     type: String,
     required: true,
