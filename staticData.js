@@ -8,16 +8,29 @@ export const discovers = [
   },
 ];
 
-export const vision = [
+// export const vision = [
+//   {
+//     visionheading: "Vision",
+//     visiondesc: "Vision Subheading",
+//     subvision:
+//       "Provides an early scientific opportunity for students to experience and acquire skill sets required for building careers.",
+//     point1: "Options to explore various career paths",
+//     point2: "Mapping of internships based on students' personality",
+//     point3: "xyz",
+//     point4: "dfgdfg",
+//   },
+// ];
+export const visionheading = [
   {
-    visionheading: "Vision",
-    visiondesc: "Vision Subheading",
-    subvision:
-      "Provides an early scientific opportunity for students to experience and acquire skill sets required for building careers.",
-    point1: "Options to explore various career paths",
-    point2: "Mapping of internships based on students' personality",
-    point3: "xyz",
-    point4: "dfgdfg",
+    visionheading: "Vision heading",
+    visionsub: "vision subheading",
+    visionImg: "vision Img",
+  },
+];
+
+export const visionpoints = [
+  {
+    point: "vision point",
   },
 ];
 

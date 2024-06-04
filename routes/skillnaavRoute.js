@@ -1,7 +1,9 @@
 const router = require("express").Router();
 const {
   Discover,
-  Vision,
+  //Vision,
+  VisionHead,
+  VisionPoint,
   Feature,
   Team,
   Pricing,
@@ -14,7 +16,9 @@ const {
 router.get("/get-skillnaav-data", async (req, res) => {
   try {
     const discovers = await Discover.find();
-    const vision = await Vision.find();
+    //const vision = await Vision.find();
+    const visionhead = await VisionHead.find();
+    const visionpoint = await VisionPoint.find();
     const features = await Feature.find();
     const team = await Team.find();
     const pricing = await Pricing.find();
@@ -24,7 +28,8 @@ router.get("/get-skillnaav-data", async (req, res) => {
 
     res.status(200).send({
       discover: discovers,
-      vision: vision,
+      visionhead: visionhead,
+      visionpoint: visionpoint,
       features: features,
       team: team,
       pricing: pricing,
@@ -55,48 +60,67 @@ router.post("/update-discover", async (req, res) => {
   }
 });
 
-// Update Vision
-router.post("/update-vision", async (req, res) => {
+// Update Vision Heading
+router.post("/update-visionheading", async (req, res) => {
   try {
-    const vision = await Vision.findOneAndUpdate(
+    const visionhead = await VisionHead.findByIdAndUpdate(
       { _id: req.body._id },
       req.body,
       { new: true }
     );
     res.status(200).send({
-      data: vision,
+      data: visionhead,
       success: true,
-      message: "Vision updated successfully",
+      message: "Vision Heading updated successfully",
     });
   } catch (error) {
-    console.error("Error updating vision:", error);
+    console.error("Error updating Vision Heading:", error);
     res.status(500).send(error);
   }
 });
 
-// Add Vision
-router.post("/add-vision", async (req, res) => {
+// Add Vision Point
+router.post("/add-visionpoint", async (req, res) => {
   try {
-    const vision = new Vision(req.body);
-    await vision.save();
+    const visionpoint = new VisionPoint(req.body);
+    await visionpoint.save();
     res.status(200).send({
-      data: vision,
+      data: visionpoint,
       success: true,
-      message: "Vision added successfully",
+      message: "Vision Point added successfully",
     });
   } catch (error) {
-    console.error("Error adding vision:", error);
+    console.error("Error adding Vision Point:", error);
     res.status(500).send(error);
   }
 });
 
-// Delete Vision
-router.delete("/delete-vision/:id", async (req, res) => {
+// Update Vision Point
+router.post("/update-visionpoint", async (req, res) => {
   try {
-    await Vision.findByIdAndDelete(req.params.id);
+    const visionpoint = await VisionPoint.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: visionpoint,
+      success: true,
+      message: "Vision Point updated successfully",
+    });
+  } catch (error) {
+    console.error("Error updating Vision Point:", error);
+    res.status(500).send(error);
+  }
+});
+
+// Delete Vision Point
+router.delete("/delete-visionpoint/:id", async (req, res) => {
+  try {
+    await VisionPoint.findByIdAndDelete(req.params.id);
     res.status(200).send({
       success: true,
-      message: "Vision deleted successfully",
+      message: "Vision Point deleted successfully",
     });
   } catch (error) {
     res.status(500).send(error);
@@ -186,7 +210,7 @@ router.post("/add-team", async (req, res) => {
 // Delete Team
 const onDelete = async (teamId) => {
   try {
-    console.log("Deleting team with ID:", teamId); 
+    console.log("Deleting team with ID:", teamId);
     const response = await axios.delete(`/api/skillnaav/delete-team/${teamId}`);
     if (response.data.success) {
       message.success(response.data.message);

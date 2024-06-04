@@ -19,32 +19,53 @@ const discoverSchema = new mongoose.Schema({
   },
 });
 
-const visionSchema = new mongoose.Schema({
+// const visionSchema = new mongoose.Schema({
+//   visionheading: {
+//     type: String,
+//     required: true,
+//   },
+//   visiondesc: {
+//     type: String,
+//     required: true,
+//   },
+//   subvision: {
+//     type: String,
+//     required: true,
+//   },
+//   point1: {
+//     type: String,
+//     required: true,
+//   },
+//   point2: {
+//     type: String,
+//     required: true,
+//   },
+//   point3: {
+//     type: String,
+//     required: true,
+//   },
+//   point4: {
+//     type: String,
+//     required: true,
+//   },
+// });
+
+const visionheadingSchema = new mongoose.Schema({
   visionheading: {
     type: String,
     required: true,
   },
-  visiondesc: {
+  visionsub: {
     type: String,
     required: true,
   },
-  subvision: {
+  visionImg: {
     type: String,
     required: true,
   },
-  point1: {
-    type: String,
-    required: true,
-  },
-  point2: {
-    type: String,
-    required: true,
-  },
-  point3: {
-    type: String,
-    required: true,
-  },
-  point4: {
+});
+const visionpointsSchema = new mongoose.Schema({
+  visionpoint: {
     type: String,
     required: true,
   },
@@ -194,7 +215,9 @@ const footerSchema = new mongoose.Schema({
 
 module.exports = {
   Discover: mongoose.model("discovers", discoverSchema),
-  Vision: mongoose.model("vision", visionSchema),
+  //Vision: mongoose.model("vision", visionSchema),
+  VisionHead: mongoose.model("visionhead", visionheadingSchema),
+  VisionPoint: mongoose.model("visionpoint", visionpointsSchema),
   Feature: mongoose.model("features", featureSchema),
   Team: mongoose.model("team", teamSchema),
   Pricing: mongoose.model("pricing", pricingSchema),
