@@ -87,10 +87,10 @@ router.post("/add-visionpoint", async (req, res) => {
     res.status(200).send({
       data: visionpoint,
       success: true,
-      message: "Vision Point added successfully",
+      message: "Feature added successfully",
     });
   } catch (error) {
-    console.error("Error adding Vision Point:", error);
+    console.error("Error adding vision:", error);
     res.status(500).send(error);
   }
 });
@@ -109,7 +109,7 @@ router.post("/update-visionpoint", async (req, res) => {
       message: "Vision Point updated successfully",
     });
   } catch (error) {
-    console.error("Error updating Vision Point:", error);
+    console.error("Error updating vision point:", error);
     res.status(500).send(error);
   }
 });

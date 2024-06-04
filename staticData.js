@@ -30,7 +30,13 @@ export const visionheading = [
 
 export const visionpoints = [
   {
-    point: "vision point",
+    point: "vision point 1",
+  },
+  {
+    point: "point 2",
+  },
+  {
+    point: "point 3",
   },
 ];
 
