@@ -1,12 +1,13 @@
 const router = require("express").Router();
 const {
   Discover,
-  //Vision,
   VisionHead,
   VisionPoint,
   Feature,
   Team,
+  TeamMember,
   Pricing,
+  PricingCard,
   FAQ,
   Contact,
   Footer,
@@ -16,12 +17,13 @@ const {
 router.get("/get-skillnaav-data", async (req, res) => {
   try {
     const discovers = await Discover.find();
-    //const vision = await Vision.find();
     const visionhead = await VisionHead.find();
     const visionpoint = await VisionPoint.find();
     const features = await Feature.find();
     const team = await Team.find();
+    const teammember = await TeamMember.find();
     const pricing = await Pricing.find();
+    const pricingcard = await PricingCard.find();
     const faqs = await FAQ.find();
     const contact = await Contact.find();
     const footer = await Footer.find();
@@ -32,7 +34,9 @@ router.get("/get-skillnaav-data", async (req, res) => {
       visionpoint: visionpoint,
       features: features,
       team: team,
+      teammember: teammember,
       pricing: pricing,
+      pricingcard: pricingcard,
       faq: faqs,
       contact: contact,
       footer: footer,
@@ -175,53 +179,138 @@ router.delete("/delete-feature/:id", async (req, res) => {
   }
 });
 
-// Update Team
-router.post("/update-team", async (req, res) => {
+// Update Team Heading
+router.post("/update-teamheading", async (req, res) => {
   try {
-    const team = await Team.findOneAndUpdate({ _id: req.body._id }, req.body, {
-      new: true,
-    });
+    const teamhead = await Team.findByIdAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
     res.status(200).send({
-      data: team,
+      data: teamhead,
       success: true,
-      message: "Team updated successfully",
+      message: "Team Heading updated successfully",
+    });
+  } catch (error) {
+    console.error("Error updating Team Heading:", error);
+    res.status(500).send(error);
+  }
+});
+
+// Add Team Member
+router.post("/add-teammember", async (req, res) => {
+  try {
+    const teammember = new TeamMember(req.body);
+    await teammember.save();
+    res.status(200).send({
+      data: teammember,
+      success: true,
+      message: "Team Member added successfully",
+    });
+  } catch (error) {
+    console.error("Error adding team member:", error);
+    res.status(500).send(error);
+  }
+});
+
+// Update Team Member
+router.post("/update-teammember", async (req, res) => {
+  try {
+    const teammember = await TeamMember.findByIdAndUpdate(
+      req.body._id,
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: teammember,
+      success: true,
+      message: "Team member updated successfully",
+    });
+  } catch (error) {
+    console.error("Error updating team member:", error);
+    res.status(500).send(error);
+  }
+});
+
+// Delete Team Member
+router.delete("/delete-teammember/:id", async (req, res) => {
+  try {
+    await TeamMember.findByIdAndDelete(req.params.id);
+    res.status(200).send({
+      success: true,
+      message: "Team Member deleted successfully",
     });
   } catch (error) {
     res.status(500).send(error);
   }
 });
 
-// Add Team
-router.post("/add-team", async (req, res) => {
+// Update Price Heading
+router.post("/update-priceheading", async (req, res) => {
   try {
-    const team = new Team(req.body);
-    await team.save();
+    const pricing = await Pricing.findByIdAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
     res.status(200).send({
-      data: team,
+      data: pricing,
       success: true,
-      message: "Team added successfully",
+      message: "Price Heading updated successfully",
     });
   } catch (error) {
-    console.error("Error adding team:", error);
+    console.error("Error updating Price Heading:", error);
     res.status(500).send(error);
   }
 });
 
-// Delete Team
-const onDelete = async (teamId) => {
+// Add Price Card
+router.post("/add-pricingcard", async (req, res) => {
   try {
-    console.log("Deleting team with ID:", teamId);
-    const response = await axios.delete(`/api/skillnaav/delete-team/${teamId}`);
-    if (response.data.success) {
-      message.success(response.data.message);
-      fetchSkillnaavData();
-    } else {
-      message.error(response.data.message);
-    }
+    const pricingcard = new PricingCard(req.body);
+    await pricingcard.save();
+    res.status(200).send({
+      data: pricingcard,
+      success: true,
+      message: "Price Card added successfully",
+    });
   } catch (error) {
-    message.error("Error deleting team:", error.message);
-    console.error("Error deleting team:", error);
+    console.error("Error adding Price Card :", error);
+    res.status(500).send(error);
   }
-};
+});
+
+// Update Price Card
+router.post("/update-pricingcard", async (req, res) => {
+  try {
+    const pricingcard = await PricingCard.findByIdAndUpdate(
+      req.body._id,
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: pricingcard,
+      success: true,
+      message: "Pricing Card updated successfully",
+    });
+  } catch (error) {
+    console.error("Error updating Pricing Card:", error);
+    res.status(500).send(error);
+  }
+});
+
+// Delete Price Card
+router.delete("/delete-pricingcard/:id", async (req, res) => {
+  try {
+    await PricingCard.findByIdAndDelete(req.params.id);
+    res.status(200).send({
+      success: true,
+      message: "Pricing Card deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
 
 module.exports = router;

@@ -19,37 +19,6 @@ const discoverSchema = new mongoose.Schema({
   },
 });
 
-// const visionSchema = new mongoose.Schema({
-//   visionheading: {
-//     type: String,
-//     required: true,
-//   },
-//   visiondesc: {
-//     type: String,
-//     required: true,
-//   },
-//   subvision: {
-//     type: String,
-//     required: true,
-//   },
-//   point1: {
-//     type: String,
-//     required: true,
-//   },
-//   point2: {
-//     type: String,
-//     required: true,
-//   },
-//   point3: {
-//     type: String,
-//     required: true,
-//   },
-//   point4: {
-//     type: String,
-//     required: true,
-//   },
-// });
-
 const visionheadingSchema = new mongoose.Schema({
   visionheading: {
     type: String,
@@ -102,11 +71,18 @@ const featureSchema = new mongoose.Schema({
   },
 });
 
-const teamMemberSchema = new mongoose.Schema({
-  _id: {
-    type: Number,
+const teamSchema = new mongoose.Schema({
+  teamheading: {
+    type: String,
     required: true,
   },
+  teamsubheading: {
+    type: String,
+    required: true,
+  },
+});
+
+const teammembersSchema = new mongoose.Schema({
   image: {
     type: String,
     required: true,
@@ -129,25 +105,48 @@ const teamMemberSchema = new mongoose.Schema({
   },
 });
 
-const teamSchema = new mongoose.Schema({
-  teamheading: {
-    type: String,
-    required: true,
-  },
-  teamsubheading: {
-    type: String,
-    required: true,
-  },
-  teamMembers: [teamMemberSchema],
-});
-
 const pricingSchema = new mongoose.Schema({
   priceheading: {
     type: String,
     required: true,
   },
-  priceCards: {
-    type: Array,
+});
+
+const pricingcardSchema = new mongoose.Schema({
+  plantype: {
+    type: String,
+    required: true,
+  },
+  plantypesubhead: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: String,
+    required: true,
+  },
+  pricepoint1: {
+    type: String,
+    required: true,
+  },
+  pricepoint2: {
+    type: String,
+    required: true,
+  },
+  pricepoint3: {
+    type: String,
+    required: true,
+  },
+  pricebtn: {
+    type: String,
+    required: true,
+  },
+  bgcolor: {
+    type: String,
+    required: true,
+  },
+  color: {
+    type: String,
     required: true,
   },
 });
@@ -215,12 +214,13 @@ const footerSchema = new mongoose.Schema({
 
 module.exports = {
   Discover: mongoose.model("discovers", discoverSchema),
-  //Vision: mongoose.model("vision", visionSchema),
   VisionHead: mongoose.model("visionhead", visionheadingSchema),
   VisionPoint: mongoose.model("visionpoint", visionpointsSchema),
   Feature: mongoose.model("features", featureSchema),
   Team: mongoose.model("team", teamSchema),
+  TeamMember: mongoose.model("teammember", teammembersSchema),
   Pricing: mongoose.model("pricing", pricingSchema),
+  PricingCard: mongoose.model("pricingcard", pricingcardSchema),
   FAQ: mongoose.model("faqs", faqSchema),
   Contact: mongoose.model("contact", contactSchema),
   Footer: mongoose.model("footer", footerSchema),
