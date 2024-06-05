@@ -160,12 +160,15 @@ const faqSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  faqdesc: {
+});
+
+const faqcardSchema = new mongoose.Schema({
+  faq: {
     type: String,
     required: true,
   },
-  faqCard: {
-    type: Array,
+  answer: {
+    type: String,
     required: true,
   },
 });
@@ -210,6 +213,50 @@ const footerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  email: {
+    type: String,
+    required: true,
+  },
+  usefullinksheader: {
+    type: String,
+    required: true,
+  },
+  usefullink1: {
+    type: String,
+    required: true,
+  },
+  usefullink2: {
+    type: String,
+    required: true,
+  },
+  usefullink3: {
+    type: String,
+    required: true,
+  },
+  usefullink4: {
+    type: String,
+    required: true,
+  },
+  stayinformedheader: {
+    type: String,
+    required: true,
+  },
+  stayinformedsubtext: {
+    type: String,
+    required: true,
+  },
+  subscribetext: {
+    type: String,
+    required: true,
+  },
+  copyrighttext: {
+    type: String,
+    required: true,
+  },
+  copyrightsubtext: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = {
@@ -221,7 +268,8 @@ module.exports = {
   TeamMember: mongoose.model("teammember", teammembersSchema),
   Pricing: mongoose.model("pricing", pricingSchema),
   PricingCard: mongoose.model("pricingcard", pricingcardSchema),
-  FAQ: mongoose.model("faqs", faqSchema),
+  FAQ: mongoose.model("faq", faqSchema),
+  FAQCard: mongoose.model("faqcard", faqcardSchema),
   Contact: mongoose.model("contact", contactSchema),
   Footer: mongoose.model("footer", footerSchema),
 };

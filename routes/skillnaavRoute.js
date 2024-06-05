@@ -9,9 +9,12 @@ const {
   Pricing,
   PricingCard,
   FAQ,
+  FAQCard,
   Contact,
   Footer,
 } = require("../models/skillnaavModel");
+
+const User = require("../models/userModel");
 
 // get all SkillNaav data
 router.get("/get-skillnaav-data", async (req, res) => {
@@ -24,7 +27,8 @@ router.get("/get-skillnaav-data", async (req, res) => {
     const teammember = await TeamMember.find();
     const pricing = await Pricing.find();
     const pricingcard = await PricingCard.find();
-    const faqs = await FAQ.find();
+    const faq = await FAQ.find();
+    const faqcard = await FAQCard.find();
     const contact = await Contact.find();
     const footer = await Footer.find();
 
@@ -37,7 +41,8 @@ router.get("/get-skillnaav-data", async (req, res) => {
       teammember: teammember,
       pricing: pricing,
       pricingcard: pricingcard,
-      faq: faqs,
+      faq: faq,
+      faqcard: faqcard,
       contact: contact,
       footer: footer,
     });
@@ -313,4 +318,92 @@ router.delete("/delete-pricingcard/:id", async (req, res) => {
   }
 });
 
+// Update FAQ Heading
+router.post("/update-faqheading", async (req, res) => {
+  try {
+    const faq = await FAQ.findByIdAndUpdate({ _id: req.body._id }, req.body, {
+      new: true,
+    });
+    res.status(200).send({
+      data: faq,
+      success: true,
+      message: "FAQ Heading updated successfully",
+    });
+  } catch (error) {
+    console.error("Error updating FAQ Heading:", error);
+    res.status(500).send(error);
+  }
+});
+
+// Add FAQ Card
+router.post("/add-faqcard", async (req, res) => {
+  try {
+    const faqcard = new FAQCard(req.body);
+    await faqcard.save();
+    res.status(200).send({
+      data: faqcard,
+      success: true,
+      message: "FAQ Card added successfully",
+    });
+  } catch (error) {
+    console.error("Error adding FAQ Card :", error);
+    res.status(500).send(error);
+  }
+});
+
+// Update FAQ Card
+router.post("/update-faqcard", async (req, res) => {
+  try {
+    const faqcard = await FAQCard.findByIdAndUpdate(req.body._id, req.body, {
+      new: true,
+    });
+    res.status(200).send({
+      data: faqcard,
+      success: true,
+      message: "FAQ Card updated successfully",
+    });
+  } catch (error) {
+    console.error("Error updating FAQ Card:", error);
+    res.status(500).send(error);
+  }
+});
+
+// Delete FAQ Card
+router.delete("/delete-faqcard/:id", async (req, res) => {
+  try {
+    await FAQCard.findByIdAndDelete(req.params.id);
+    res.status(200).send({
+      success: true,
+      message: "FAQ Card deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+//admin login
+router.post("/admin-login", async (req, res) => {
+  try {
+    const user = await User.findOne({
+      username: req.body.username,
+      password: req.body.password,
+    });
+    user.password = "";
+    if (user) {
+      res.status(200).send({
+        data: user,
+        success: true,
+        message: "Login Successfully",
+      });
+    } else {
+      res.status(200).send({
+        data: user,
+        success: false,
+        message: "Invalid username or password",
+      });
+    }
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
 module.exports = router;

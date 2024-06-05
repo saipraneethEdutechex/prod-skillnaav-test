@@ -117,26 +117,59 @@ export const pricing = [
   },
 ];
 
-export const pricingcard = ;
+export const pricingcard = [
+  {
+    plantype: "Free Trial",
+    plantypesubhead: "Perfect for exploring the platform",
+    price: "$0/mo",
+    pricepoint1: "Access to basic internships",
+    pricepoint2: "Limited Support",
+    pricepoint3: "No commitment required",
+    pricebtn: "Start Trial",
+    bgcolor: "teal",
+    color: "teal",
+  },
+  {
+    plantype: "Student (B2C)",
+    plantypesubhead: "Ideal for individual students",
+    price: "$0/mo",
+    pricepoint1: "Access to basic internships",
+    pricepoint2: "Limited Support",
+    pricepoint3: "No commitment required",
+    pricebtn: "Start Trial",
+    bgcolor: "purple",
+    color: "purple",
+  },
+  {
+    plantype: "Institutional (B2B)",
+    plantypesubhead: "Best for educational institutions",
+    price: "Contact Us",
+    pricepoint1: "Access to basic internships",
+    pricepoint2: "Limited Support",
+    pricepoint3: "No commitment required",
+    pricebtn: "Start Trial",
+    bgcolor: "orange",
+    color: "orange",
+  },
+];
 
-export const faqs = [
+export const faq = [
   {
     faqheading: "Frequently Asked Questions",
     faqsubheading: "Let’s clarify some of your questions",
-    faqdesc:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-    faqCard: [
-      {
-        faq: "How does the platform match students with internships?",
-        answer:
-          "Our platform uses advanced psychometrics and user input to match students with internships that align with their skills, interests, and personality traits",
-      },
-      {
-        faq: "What types of internships are available on the platform?",
-        answer:
-          "Our platform offers a wide range of internships across various industries, including technology, healthcare, business, and more.",
-      },
-    ],
+  },
+];
+
+export const faqcard = [
+  {
+    faq: "How does the platform match students with internships?",
+    answer:
+      "Our platform uses advanced psychometrics and user input to match students with internships that align with their skills, interests, and personality traits",
+  },
+  {
+    faq: "What types of internships are available on the platform?",
+    answer:
+      "Our platform offers a wide range of internships across various industries, including technology, healthcare, business, and more.",
   },
 ];
 
@@ -153,4 +186,20 @@ export const contact = [
   },
 ];
 
-const footer = [{ footerDetails: "skill" }];
+const footer = [
+  {
+    contactdetails: "contact details",
+    email: "info@skillnaav.com",
+    usefullinksheader: "Useful Links",
+    usefullink1: "About SkillNaav",
+    usefullink2: "Visa Information",
+    usefullink3: "Immigration FAQ",
+    usefullink4: "Contact Us",
+    stayinformedheader: "Stay Informed",
+    stayinformedsubtext:
+      "Subscribe to our newsletters to get the latest news and updates",
+    subscribetext: "subscribe",
+    copyrighttext: "© 2024 SkillNaav. All Rights Reserved",
+    copyrightsubtext: "Privacy Policy|Terms and Conditions",
+  },
+];
